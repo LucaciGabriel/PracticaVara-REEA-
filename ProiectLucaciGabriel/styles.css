@@ -19,6 +19,8 @@
     src: url("Fonts/FuturaPTBook.otf");
 }
 html {
+    max-width: 100%;
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
 }
@@ -33,7 +35,9 @@ body {
     padding: 0;
     z-index: -2;
     width: 1920px;
-    height: 8600px;
+    height: 8000px;
+    max-width: 100%;
+    overflow-x: hidden;
     background-color:#0D0D0D;
 }
 /*navigation menu/start section*/
@@ -156,25 +160,18 @@ p.prod {
 .sqleft {
     display: inline-block;
     height: 100px;
-    width: 50px;
-    margin-right: -10px;
+    width: 60px;
+    margin-right: -15px;
     border-style: solid none solid solid;
     border-color: white;
 }
 .sqright {
     display: inline-block;
     height: 100px;
-    width: 50px;
-    margin-left: -10px;
+    width: 60px;
+    margin-left: -15px;
     border-style: solid solid solid none;
     border-color: white;
-}
-div.bot {
-    background-color: black;
-    z-index: 1;
-    width: 1920px;
-    height: 397px;
-    margin-top: 400px;
 }
 /*products section*/
 div.showcase {
@@ -184,6 +181,18 @@ div.showcase {
     height: 180px;
     display: inline-block;
     margin:5px 5px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-origin: center;
+    background-size: 100%;
+    transition: background-size .5s;
+}
+div.showcase:hover {
+    background-size: 120%;
+}
+div.showcase:hover a.showcase{
+    color: #54B3A1;
+    transition-duration: 0.2s;
 }
 a.showcase {
     position: absolute;
@@ -217,15 +226,30 @@ a.showcase {
 }
 /*news section*/
 div.post {
+    position: relative;
     display: inline-block;
     width: 402px;
-    height: 490px;
-    margin: 5px 5px 0;
+    height: 470px;
+    margin: 50px 5px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    transition: background-size .5s;
+}
+div.post:hover {
+    background-size: 120%;
+}
+div.post:hover p.post-border{
+    border-color: #54B3A1;
+}
+div.post:hover p.divider{
+    background-color: #54B3A1;
 }
 p.post-date {
-    position: relative;
-    top: 240px;
+    position: absolute;
+    top: 230px;
     left: 20px;
+    width: 342px;
+    height: 23px;
     text-align: left;
     font-family: FuturaDemi;
     font-size: 1.2em;
@@ -239,28 +263,210 @@ div.postbot {
     background-color: white;
 }
 p.post-title {
-    position: relative;
+    
+    position: absolute;
     top: 15px;
     left: 20px;
+    width: 220px;
+    height: 55px;
     text-align: left;
     font-family: FuturaDemi;
     font-size: 1.7em;
     color: black;
 }
 p.post-text {
-    position: relative;
-    top: 102px;
+    position: absolute;
+    top: 100px;
     left: 20px;
+    width: 342px;
+    height: 71px;
     text-align: left;
     font-family: FuturaBook;
     font-size: 1.1em;
     color: black;
 }
 p.divider {
-    position: relative;
-    top: 80px;
+    position: absolute;
+    top: 85px;
     left: 20px;
     background-color: black;
     width: 32px;
     height: 2px;
+}
+p.post-border {
+    position: absolute;
+    z-index: 1;
+    top: 5px;
+    left: 8px;
+    width: 382px;
+    height: 450px;
+    border: 2px solid black;
+}
+p.post-icon {
+    position: absolute;
+    top: 20px;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}
+p.to-section {
+    margin: 0 auto;
+    width: fit-content;
+    height: fit-content;
+    font-family: FuturaDemi;
+    font-size: 1.1em;
+    color: white;
+    background-color: #F34213;
+    border: 20px solid #F34213;
+    border-radius: 27px;
+}
+/*gallery section*/
+div.gallery {
+    position: absolute;
+    left: 300px;
+    display: inline-block;
+    width: 1310px;
+    height: 620px;
+}
+img.gallery {
+    margin: 10px 10px;
+}
+/*shopping? section*/
+p.shopping-intro {
+    margin-top: 50px;
+    font-family: FuturaBook;
+    font-size: 3em;
+    text-align: center;
+    color: white;
+}
+div.shopping-post {
+    display: inline-block;
+    position: relative;
+    top: 200px;
+    width: 350px;
+    height: 550px;
+    border-left: 2px solid white;
+}
+img.shopping {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+p.shopping-post-title {
+    display: block;
+    position: absolute;
+    top: 280px;
+    left: 30px;
+    width: 294px;
+    height: 41px;
+    font-family: FuturaDemi;
+    font-size: 1.6em;
+    color: white;
+}
+p.shopping-post-text {
+    display: block;
+    position: absolute;
+    top: 350px;
+    left: 30px;
+    width: 315px;
+    height: 131px;
+    font-family: FuturaBook;
+    font-size: 1.2em;
+    color: white;
+}
+p.shopping-divider {
+    position: absolute;
+    top: 322px;
+    left: 30px;
+    background-color: #54B3A1;
+    width: 32px;
+    height: 2px;
+}
+p.shopping-bot {
+    position: absolute;
+    top:510px;
+    left:30px;
+    font-family: FuturaMedium;
+    font-size: 0.9em;
+    color: white;
+    vertical-align: middle;
+}
+/*others section*/
+p.other-intro {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 4em;
+    font-family: FuturaBook;
+    color: white;
+}
+div.others-photo {
+    position: relative;
+    display: inline-block;
+    margin: 100px 5px 0;
+    width: 400px;
+    height: 480px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-origin: center;
+    background-size: 100%;
+    transition: background-size .5s;
+}
+div.others-photo:hover {
+    background-size: 120%;
+}
+div.others-photo:hover p.others-border{
+    transition-duration: 0.3s;
+    visibility: visible;
+}
+p.others-border {
+    position: absolute;
+    z-index: 1;
+    top: 15px;
+    left: 15px;
+    width: 370px;
+    height: 450px;
+    border: 2px solid #54B3A1;
+    visibility: hidden;
+}
+p.others-text {
+    position: absolute;
+    font-family: FuturaDemi;
+    font-size: 1.3em;
+    color: white;
+    left: 20px;
+    bottom: 20px;
+    text-align: left;
+}
+/*footer section*/
+div.footer {
+    position: absolute;
+    bottom: 0;
+    background-color: black;
+    z-index: 1;
+    width: 1920px;
+    height: 300px;
+}
+div.footer-text {
+    position: relative;
+    display: inline-block;
+    text-align: left;
+}
+p.footer-text {
+    margin: 10px;
+    font-family: FuturaMedium;
+    font-size:1em;
+    color: white;
+}
+img.footer-icon {
+    position: relative;
+    height: 32px;
+    width: 32px;
+}
+p.copyright-text {
+    position: relative;
+    top: 110px;
+    left: 800px;
+    font-family: FuturaBook;
+    font-size: 0.8em;
+    color: #ABABAB;
 }
