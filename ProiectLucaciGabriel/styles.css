@@ -246,7 +246,7 @@ span.nav {
 div.start {
     top:0;
     z-index: 1;
-    background-image: url("img/StartPhoto.png");
+    background-image: url("Img/StartPhoto.png");
     background-repeat: no-repeat;
     width: 1920px;
     height: 1170px;
@@ -376,25 +376,25 @@ a.showcase {
     transition: bottom .3s;
 }
 #show1 {
-    background-image: linear-gradient(to top, #000000CC 0%, #00000000 100%), url("img/Baiju.png");
+    background-image: linear-gradient(to top, #000000CC 0%, #00000000 100%), url("Img/Baiju.png");
 }
 #show2 {
-    background-image: linear-gradient(to top, #000000CC 0%, #00000000 100%), url("img/Rum.png");
+    background-image: linear-gradient(to top, #000000CC 0%, #00000000 100%), url("Img/Rum.png");
 }
 #show3 {
-    background-image: linear-gradient(to top, #000000CC 0%, #00000000 100%), url("img/Whiskey.png");
+    background-image: linear-gradient(to top, #000000CC 0%, #00000000 100%), url("Img/Whiskey.png");
 }
 #show4 {
-    background-image: linear-gradient(to top, #000000CC 0%, #00000000 100%), url("img/Gin.png");
+    background-image: linear-gradient(to top, #000000CC 0%, #00000000 100%), url("Img/Gin.png");
 }
 #show5 {
-    background-image: linear-gradient(to top, #000000CC 0%, #00000000 100%), url("img/Vodka.png");
+    background-image: linear-gradient(to top, #000000CC 0%, #00000000 100%), url("Img/Vodka.png");
 }
 #show6 {
-    background-image: linear-gradient(to top, #000000CC 0%, #00000000 100%), url("img/Liquor.png");
+    background-image: linear-gradient(to top, #000000CC 0%, #00000000 100%), url("Img/Liquor.png");
 }
 #show7 {
-    background-image: linear-gradient(to top, #000000CC 0%, #00000000 100%), url("img/Bitter.png");
+    background-image: linear-gradient(to top, #000000CC 0%, #00000000 100%), url("Img/Bitter.png");
 }
 /*news section*/
 div.post {
@@ -640,7 +640,7 @@ p.cyan-arrow {
     height: 13px;
     top: 428px;
     left: 318px;
-    content: url("img/CyanArrow.png");
+    content: url("Img/CyanArrow.png");
     opacity: 0%;
     transition: opacity .3s ease-in-out, left .3s;
 }
