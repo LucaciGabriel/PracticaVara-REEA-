@@ -18,14 +18,55 @@
     font-family: FuturaBook;
     src: url("Fonts/FuturaPTBook.otf");
 }
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 html {
     width: 100%;
-    margin: 0;
-    padding: 0;
-}
-p {
-    margin: 0;
-    padding: 0;
 }
 /*AGE VERIFICATION PAGE*/
 body.ageverif {
@@ -34,7 +75,6 @@ body.ageverif {
     margin: 0;
     padding: 0;
     width: 1920px;
-    height: 1080px;
     z-index: -1;
     background-color:#0D0D0D;
     align-content: center;
@@ -195,18 +235,18 @@ body.homepage {
     padding: 0;
     z-index: -2;
     width: 1920px;
-    height: 8000px;
     background-color:#0D0D0D;
+    overflow-x: hidden;
 }
 /*navigation menu/start section*/
 ul {
     list-style-type: none;
     display: inline;
 }
-p.nav {
+p.navig {
+    margin: 100px 30px;
     display: inline;
     color: white;
-    margin:auto 15px;
     text-align: right;
     font: normal normal normal 17px/22px FuturaMedium;
     letter-spacing: 0px;
@@ -215,33 +255,44 @@ p.nav {
     transition: text-decoration-color 300ms, text-underline-offset 300ms;
     cursor: pointer;
 }
-p.nav:hover {
+p.navig:hover {
     text-decoration-color: rgba(84, 179, 161, 1);
     text-underline-offset: 6px;
-  }
-  
-.nav-transparent {
+}
+div.nav-container {
     z-index: 10;
-    top:0;
+    position: fixed;
+    top: 0;
+}
+div.nav-transparent {
+    display: flex;
+    align-items: center;
     background-image: linear-gradient(#000000CC 0%, #00000000 100%);
     width: 1920px;
-    height: 180px;
-    position: fixed;
-}
-.nav-solid {
-    z-index: 10;
-    top:0;
-    width: 1920px;
-    height: 180px;
-    position: fixed;
-    background-color: black;
-}
-span.nav {
-    display: inline;
-    margin-left: 200px;
-    margin-right: 100px;
+    height: 200px;
     position: relative;
-    top: 30px;
+}
+div.nav-solid {
+    display: flex;
+    align-items: center;
+    width: 1920px;
+    height: 100px;
+    background-color: black;
+    position: relative;
+}
+p.nav-transparent {
+    margin: 25px 100px 25px 100px;
+    display: inline-block;
+    width: 149px;
+    height: 130px;
+    background-image: url("Img/Viennalogo1.png");
+}
+p.nav-solid {
+    margin: 25px 100px 25px 100px;
+    display: inline-block;
+    width: 297px;
+    height: 50px;
+    background-image: url("Img/Viennalogo2.png");
 }
 div.start {
     top:0;
@@ -296,11 +347,10 @@ div.interm {
     background-color: #54B3A1;
     margin: -120px auto 0;
     width: 1920px;
-    height: 903px;  
 }
 p.interm {
     color: white;
-    margin: 200px auto 0;
+    margin: 100px auto;
     text-align: center;
     font: normal normal normal 57px/64px FuturaLight;
     letter-spacing: 0px;
@@ -313,8 +363,7 @@ p.interm {
     height: 126px;
     background-color: #54B3A1;
     position: relative;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 50px auto;
 }
 /*main section*/
 div.main {
@@ -323,6 +372,7 @@ div.main {
     align-content: middle;
 }
 p.prod {
+    text-align: center;
     font-family: FuturaDemi;
     color:white;
 }
@@ -331,6 +381,7 @@ p.prod {
     width: 80px;
     height: 116px;
     margin-right: -15px;
+    border: 2px;
     border-style: solid none solid solid;
     border-color: white;
 }
@@ -339,6 +390,7 @@ p.prod {
     width: 80px;
     height: 116px;
     margin-left: -15px;
+    border: 2px;
     border-style: solid solid solid none;
     border-color: white;
 }
@@ -501,7 +553,6 @@ div.gallery {
     left: 300px;
     display: inline-block;
     width: 1310px;
-    height: 620px;
 }
 img.gallery {
     margin: 10px 10px;
