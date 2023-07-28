@@ -70,12 +70,6 @@ html {
 }
 /*AGE VERIFICATION PAGE*/
 body.ageverif {
-    display: flex;
-    align-content: center;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: nowrap;
-    z-index: -2;
     width: 100%;
     background-color:#0D0D0D;
 }
@@ -286,7 +280,7 @@ ul.nav-solid {
 #navbarlogo {
     padding: 5%;
 }
-div.start {
+div.slider-screen {
     display: flex;
     align-content: center;
     background-image: url("Img/StartPhoto.png");
@@ -299,22 +293,22 @@ div.message-container {
     width: fit-content;
     height: fit-content;
 }
-div.gr1 {
+div.slider-message {
     background-image: linear-gradient(90deg, #000000CC 0%, #00000000 100%);
 }
-p.gr1a {
+p.slider-message-text {
     padding:2%;
     color: white;
     text-align: left;
     font: normal normal normal 100px/100px FuturaBook;
     letter-spacing: -2px;
 }
-div.gr1b {
+div.red-button {
     margin: 0 auto;
     width: fit-content;
     padding: 50px;
 }
-a.gr1b {
+a.red-button {
     color:white;
     text-align: center;
     font: normal normal normal 15px/20px FuturaDemi;
@@ -361,6 +355,7 @@ div.quote-icon-container {
     display: flex;
     justify-content: center;
 }
+
 img.quote-icon {
     cursor: pointer;
     padding: 0 10px;
@@ -373,6 +368,11 @@ img.quote-icon {
     background-color: #54B3A1;
     position: relative;
 }
+
+.rectvertical.rtop {
+    margin-top: -3%;
+}
+
 /*main section*/
 div.main {
     display: flex;
