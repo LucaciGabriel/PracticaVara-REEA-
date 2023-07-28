@@ -11,7 +11,7 @@ function switchToHome() {
         if (m < 0 || (m === 0 && currentdate.getDate() < document.getElementById("dayinput").value)) {
             age--;
         }
-        if(age>=18)window.location.href="ViennaDistributionHomePage.html";
+        if(age>=18)window.location.href="Home.html";
         else 
         {
             document.getElementById("alertbox").style.display= "block";
