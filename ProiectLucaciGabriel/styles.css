@@ -94,6 +94,15 @@ p.question {
     color: white;
     text-align: center;
 }
+input.date-input {
+    position: absolute;
+    top: 43px;
+    left: 30px;
+    width: 128px;
+    height: 23px;
+    z-index: 3;
+    background-color: #54B3A1;
+}
 div.date-container {
     width: 70%;
     margin: 2% auto;
