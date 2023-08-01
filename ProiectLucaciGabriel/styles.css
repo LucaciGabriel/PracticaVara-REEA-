@@ -232,7 +232,6 @@ body.homepage {
     align-content: center;
     flex-direction: column;
     flex-wrap: nowrap;
-    z-index: -2;
     width: 100%;
     background-color:#0D0D0D;
 }
@@ -281,6 +280,7 @@ ul.nav-solid {
     padding: 5%;
 }
 div.slider-screen {
+    position: relative;
     display: flex;
     align-content: center;
     background-image: url("Img/StartPhoto.png");
@@ -288,7 +288,7 @@ div.slider-screen {
     width: 100%;
 }
 div.message-container {
-    padding: 350px 0;
+    padding: 350px 0 450px;
     margin:0 auto;
     width: fit-content;
     height: fit-content;
@@ -307,6 +307,9 @@ div.red-button {
     margin: 0 auto;
     width: fit-content;
     padding: 50px;
+}
+div.red-button.initial {
+    margin: 0;
 }
 a.red-button {
     color:white;
@@ -338,20 +341,19 @@ div.interm {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    z-index: 0;
     background-color: #54B3A1;
     width: 100%;
 }
 p.interm {
     color: white;
-    padding: 100px 0;
+    padding: 200px 0 0;
     text-align: center;
     font: normal normal normal 57px/64px FuturaLight;
     letter-spacing: 0px;
     width: 60%;
-    height: 20%;
 }
 div.quote-icon-container {
+    padding: 50px 0 150px;
     display: flex;
     justify-content: center;
 }
@@ -370,9 +372,39 @@ img.quote-icon {
 }
 
 .rectvertical.rtop {
-    margin-top: -3%;
+    margin-top: -1%;
 }
-
+.rectvertical.rbot {
+    margin-bottom: -1%;
+}
+div.interm-angled-container {
+    position: relative;
+    overflow: hidden;
+    height: 100px;
+    width: 100%;
+}
+div.interm-angled-container.top {
+    margin-top: -100px;
+}
+div.interm-angled-container.bot {
+    margin-bottom: 100px;
+}
+p.interm-angled-section {
+    position: absolute;
+    background-color: #54B3A1;
+    width: 130%;
+    height: 500px;
+}
+p.interm-angled-section.top {
+    top: 50px;
+    left: 0;
+    transform: rotate(-2deg);
+}
+p.interm-angled-section.bot {
+    bottom: 50px;
+    right: 0;
+    transform: rotate(-2deg);
+}
 /*main section*/
 div.main {
     display: flex;
@@ -444,21 +476,16 @@ div.showcase-container {
     flex-wrap: wrap;
 }
 div.showcase {
+    overflow: hidden;
     position: relative;
-    z-index: 1;
     width: 294px;
     height: 180px;
     display: inline-block;
     margin:5px 5px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-origin: center;
-    background-size: 100%;
-    transition: background-size .3s;
     cursor: pointer;
 }
-div.showcase:hover {
-    background-size: 120%;
+div.showcase:hover img.showcase-image{
+    transform: scale(1.15);
 }
 div.showcase:hover a.showcase{
     color: #54B3A1;
@@ -476,35 +503,33 @@ a.showcase {
     color: white;
     transition: bottom .3s;
 }
-#show1 {
-    background-image: linear-gradient(to top, #000000CC 0%, #00000000 100%), url("Img/Baiju.png");
+img.showcase-image {
+    transform-origin: center;
+    transition: transform .3s ease-in-out;
 }
-#show2 {
-    background-image: linear-gradient(to top, #000000CC 0%, #00000000 100%), url("Img/Rum.png");
+div.showcase > * {
+    z-index: 5;
 }
-#show3 {
-    background-image: linear-gradient(to top, #000000CC 0%, #00000000 100%), url("Img/Whiskey.png");
-}
-#show4 {
-    background-image: linear-gradient(to top, #000000CC 0%, #00000000 100%), url("Img/Gin.png");
-}
-#show5 {
-    background-image: linear-gradient(to top, #000000CC 0%, #00000000 100%), url("Img/Vodka.png");
-}
-#show6 {
-    background-image: linear-gradient(to top, #000000CC 0%, #00000000 100%), url("Img/Liquor.png");
-}
-#show7 {
-    background-image: linear-gradient(to top, #000000CC 0%, #00000000 100%), url("Img/Bitter.png");
+div.showcase::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, #000000CC 0%, #00000000 100%);
 }
 /*news section*/
 div.news-containter {
     width: 65%;
-    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: 100px auto;
 }
 div.posts-container {
-    width: 65%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -512,87 +537,107 @@ div.posts-container {
     margin: 100px auto 0;
 }
 div.post {
-    position: relative;
-    display: inline-block;
+    margin: 15px;
     width: 402px;
-    height: 470px;
-    margin: 50px 5px;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    transition: background-size .3s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background-color: white;
 }
-div.post:hover {
-    background-size: 120%;
+div.post:hover img.post-image{
+    transform: scale(1.15);
 }
 div.post:hover div.post-border{
     border-color: #54B3A1;
 }
-div.post:hover p.divider{
+div.post:hover p.post-divider{
     background-color: #54B3A1;
+}
+div.post-image-container {
+    width: 402px;
+    height: 273px;
+    position: relative;
+    overflow: hidden;
+}
+img.post-image {
+    transform-origin: center;
+    transition: transform .3s ease-in-out;
+}
+div.post-image-container > * {
+    z-index: 5;
+}
+div.post-image-container::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, #000000CC 5%, #00000000 50%)
 }
 p.post-date {
     position: absolute;
-    top: 230px;
-    left: 20px;
-    width: 342px;
+    bottom: 0;
+    left: 30px;
     text-align: left;
     font: normal normal normal 18px/24px FuturaDemi;
     letter-spacing: 0px;
     color: white;
 }
-div.postbot {
-    position: relative;
-    margin-left: -10px;
-    top: 250px;
-    width: 402px;
-    height: 217px;
-    background-color: white;
+div.post-border {
+    position: absolute;
+    z-index: 2;
+    margin:10px;
+    width: 94%;
+    height: 95%;
+    border: 2px solid #0D0D0D;
+    pointer-events: none;
+}
+div.post-text-container {
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+div.post-title-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 a.post-title {
-    cursor: pointer;
-    position: absolute;
-    top: 15px;
-    left: 20px;
-    width: 220px;
+    margin: 25px 25px;
     text-align: left;
-    text-decoration: none;
     font: normal normal normal 24px/24px FuturaDemi;
     letter-spacing: 0px;
-    color: black;
+    text-decoration: none;
+    color: #0D0D0D;
+    width: 50%;
+}
+div.post-icons-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+a.post-icon {
+    width: 24px;
+    height: 24px;
+    margin: 25px 5px;
+}
+p.post-divider {
+    margin: 0 25px;
+    width: 32px;
+    height: 2px;
+    background-color: #0D0D0D;
 }
 p.post-text {
-    position: absolute;
-    top: 100px;
-    left: 20px;
-    width: 342px;
+    margin: 25px;
     text-align: left;
     font: normal normal normal 18px/24px FuturaBook;
     letter-spacing: 0px;
     color: #333333;
-}
-p.divider {
-    position: absolute;
-    top: 85px;
-    left: 20px;
-    background-color: black;
-    width: 32px;
-    height: 2px;
-}
-div.post-border {
-    position: absolute;
-    top: 5px;
-    left: 8px;
-    width: 382px;
-    height: 450px;
-    border: 2px solid black;
-}
-div.post-icon-container {
-    margin: 0 0 0 250px;
-}
-a.post-icon {
-    padding: 10px 5px;
-    display: inline-block;
-    cursor: pointer;
+    width: 90%;
 }
 /*gallery section*/
 div.gallery-container {
@@ -699,94 +744,134 @@ a.shopping-bot:hover {
 }
 /*others section*/
 div.others-container {
+    margin: 100px auto;
     width: 75%;
-    margin: 5% auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-div.others-photo-container {
+p.others-intro {
     margin: 50px auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-p.other-intro {
-    margin-top: 50px;
+    width: 70%;
     text-align: center;
     font: normal normal normal 73px/73px FuturaBook;
     letter-spacing: 0px;
+    text-align: center;
     color: white;
 }
-div.others-photo {
+div.others-post-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+div.others-post {
     position: relative;
-    display: inline-block;
-    margin: 100px 5px 0;
+    margin: 10px;
+}
+div.others-image-container {
+    overflow: hidden;
+}
+img.others-image {
     width: 400px;
     height: 480px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-origin: center;
-    background-size: 100%;
-    transition: background-size .3s;
+    transition: transform .3s ease-in-out;
 }
-div.others-photo:hover {
-    background-size: 120%;
+img.others-image.first {
+    transform-origin: center;
 }
-div.others-photo:hover div.others-border{
-    border-color: rgba(84, 179, 161, 1);
+img.others-image.second {
+    transform-origin: bottom;
 }
-div.others-photo:hover a.others-text{
-    bottom: 30px;
-    left: 30px
+img.others-image.third {
+    transform-origin: right;
 }
-div.others-photo:hover p.cyan-arrow{
-    opacity: 100%;
-    left:338px;
-}
-div.others-border {
-    margin: 15px;
-    width: 370px;
-    height: 450px;
-    border: 2px solid rgba(84, 179, 161, 0);
-    transition: border-color .3s ease-in-out;
+img.others-image::after {
+    background-image: linear-gradient(to top, #000000CC 0%, #00000000 100%);
 }
 a.others-text {
-    opacity: 100%;
     position: absolute;
+    left: 20px;
+    bottom: 25px;
+    max-width: 50%;
     text-align: left;
-    font: normal normal normal 20px/20px FuturaDemi;
+    font: normal normal normal 30px/30px FuturaBook;
     letter-spacing: 0px;
     text-decoration: none;
     color: white;
+    transition: left .3s ease-in-out, bottom .3s ease-in-out;
+}
+p.others-border {
+    width: 360px;
+    min-height: 440px;
+    position: absolute;
     left: 20px;
     bottom: 20px;
-    text-align: left;
-    transition: bottom .3s, left .3s;
+    border: 2px solid #54B3A1;
+    pointer-events: none;
+    visibility:hidden;
+    opacity:0;
+    transition:visibility .3s ease-in-out, opacity .3s ease-in-out;
 }
-p.cyan-arrow {
+img.cyan-arrow {
     position: absolute;
-    z-index: 5;
-    width: 22px;
-    height: 13px;
-    top: 428px;
-    left: 318px;
-    content: url("Img/CyanArrow.png");
-    opacity: 0%;
-    transition: opacity .3s ease-in-out, left .3s;
+    right: 50px;
+    bottom: 30px;
+    visibility:hidden;
+    opacity:0;
+    transition:visibility .3s ease-in-out, opacity .3s ease-in-out, right .3s ease-in-out;
+}
+p.cyan-underline {
+    position:absolute;
+    left:20px;
+    bottom:20px;
+    width:40px;
+    height:2px;
+    background-color: #54B3A1;
+}
+div.others-post:hover p.others-border{
+    visibility: visible;
+    opacity: 1;
+}
+div.others-post:hover img.cyan-arrow{
+    visibility: visible;
+    opacity: 1;
+    right: 40px;
+}
+div.others-post:hover a.others-text{
+    left: 40px;
+    bottom: 30px;
+}
+div.others-post:hover img.others-image{
+    transform: scale(1.15);
 }
 /*footer section*/
 div.footer-container {
     width: 100%;
-    background-color: black;
+    background-color: #0D0D0D;
     z-index: 1;
+}
+div.footer-angled-container {
+    position: relative;
+    overflow: hidden;
+    height: 100px;
+    width: 100%;
+}
+p.footer-angled-section {
+    position: absolute;
+    background-color: black;
+    top: 60px;
+    width: 110%;
+    height: 500px;
+    transform: rotate(-2deg);
+    margin: 0;
 }
 div.footer {
     margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    background-color: black;
 }
 #footer-logo {
     padding: 1%;
