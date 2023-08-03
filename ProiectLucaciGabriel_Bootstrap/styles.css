@@ -247,7 +247,7 @@ body.homepage {
     padding-left: 0;
     padding-right: 0;
 }
-/*navigation menu/start section*/
+/*navigation menu*/
 li.navig{
     padding: 1%;
     display: inline-block;
@@ -296,16 +296,39 @@ ul.nav-solid {
     padding: 5%;
     grid-column-start: 1;
 }
-div.slider-screen {
+/*slideshow/start section*/
+div.slider-container {
     position: relative;
     display: flex;
     align-content: center;
-    background-image: url("Img/StartPhoto.png");
-    background-repeat: no-repeat;
     width: 100%;
 }
+div.slide {
+    width: 100%;
+    display: none;
+}
+a.prev-slide,a.next-slide {
+    padding: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+}
+a.prev-slide {
+    left: 0;
+}
+a.next-slide {
+    right: 0;
+}
+a.prev-slide:hover, a.next-slide:hover {
+    background-color: #0d0d0d;
+}  
+img.slide-bg-image {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
 .boot-message-container {
-    padding: 350px 0 450px;
+    padding: 350px 0;
 }
 div.message-container {
     margin-left: -40px;
@@ -313,7 +336,7 @@ div.message-container {
     min-height: 330px;
 }
 p.slider-message-text {
-    display: inline-block;
+    display: block;
     padding: 40px 0 0 40px;
     color: white;
     text-align: left;
@@ -321,7 +344,7 @@ p.slider-message-text {
     letter-spacing: -2px;
 }
 div.red-button {
-    display: inline-block;
+    display: block;
     margin: 50px auto;
     width: fit-content;
     padding: 2%;
@@ -353,6 +376,23 @@ div.go-to-container {
     height: 53px;
     background-color: #54B3A1;
 }
+div.slide-line-container {
+    text-align: center;
+    position: absolute;
+    bottom: 15%;
+    left: 46%;
+}
+span.slide-line {
+    cursor: pointer;
+    height: 4px;
+    width: 32px;
+    margin: 0 2px;
+    background-color: white;
+    display: inline-block;
+}
+span.current-slide, span.slide-line:hover {
+    background-color: #54B3A1;
+  }
 /*intermediate section*/
 div.interm-container {
     display: flex;
