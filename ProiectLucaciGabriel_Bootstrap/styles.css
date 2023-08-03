@@ -143,6 +143,7 @@ div.date-background {
     background-color: #54B3A1;
 }
 button.to-homepage {
+    position: relative;
     margin: 30px auto;
     height: 5%;
     text-align: center;
@@ -200,7 +201,6 @@ p.cookies-text {
     width: 67%;
 }
 button.accept-cookies {
-
     margin: 0 2%;
     text-align: center;
     font: normal normal normal 13px/17px FuturaMedium;
