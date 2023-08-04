@@ -721,7 +721,6 @@ p.post-text {
     gap: 30px 30px;
     grid-auto-flow: row;
     justify-content: center;
-    justify-items: stretch;
     grid-template-areas:
       "gallery1 gallery2 gallery3 gallery4 gallery5 gallery10"
       "gallery1 gallery6 gallery7 gallery8 gallery9 gallery10";
@@ -746,7 +745,45 @@ p.post-text {
 .gallery9 { grid-area: gallery9; }
 
 .gallery10 { grid-area: gallery10; }
-  
+
+@media only screen and (max-width: 1650px) {
+    .gallery-container {
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr 1fr; 
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; 
+        gap: 20px 20px;
+        justify-content: center;
+        grid-template-areas: 
+          "gallery1 gallery1 gallery1 gallery1"
+          "gallery1 gallery1 gallery1 gallery1"
+          "gallery2 gallery3 gallery4 gallery5"
+          "gallery6 gallery7 gallery8 gallery9"
+          "gallery10 gallery10 gallery10 gallery10"
+          "gallery10 gallery10 gallery10 gallery10"; 
+      }
+}
+@media only screen and (max-width: 1100px) {
+    .gallery-container {
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+        gap: 10px 10px;
+        justify-content: center;
+        grid-template-areas: 
+          "gallery1 gallery1"
+          "gallery1 gallery1"
+          "gallery2 gallery3"
+          "gallery4 gallery5"
+          "gallery6 gallery7"
+          "gallery8 gallery9"
+          "gallery10 gallery10"
+          "gallery10 gallery10"; 
+      }
+}
+img.gallery-image {
+    margin: 0 auto;
+    display: block;
+}
 /*shopping? section*/
 div.shopping-container {
     width: 75%;
