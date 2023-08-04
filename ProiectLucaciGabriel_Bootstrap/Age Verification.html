@@ -2,6 +2,7 @@
 <html>
     <link rel="stylesheet" href="styles.css">
 <head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <meta charset="UTF-8">
 <title>Age Verification</title>
 <script src="Js/Hidecookies.js"></script>
@@ -9,45 +10,95 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body class="ageverif">
-    <img src="Img/Viennalogo1.png" style="display: block; margin: 100px auto 0; scale: 1.2;">
-    <p class="welcome">Welcome! In order to continue your visit on Vienna distribution, you must be of legal drinking age.</p>
-    <p class="question">WHEN WERE YOU BORN?</p>
-    <p style="display: block; margin: 0 auto; width: 32px; height: 2px; background-color: #54B3A1;"></p>
-    <div class="date-container">
-        <div class="date">
-            <p class="date-title">DAY (DD)</p>
-            <input class="date-input"id="dayinput" type="number">
-            <div class="date-border"></div>
-            <div class="date-background"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-2">
+                <img class="age-verif-logo" src="Img/Viennalogo1.png">
+            </div>
         </div>
-        <div class="date">
-            <p class="date-title">MONTH (MM)</p>
-            <input class="date-input" id="monthinput" type="number">
-            <div class="date-border"></div>
-            <div class="date-background"></div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <p class="welcome">Welcome! In order to continue your visit on Vienna distribution, you must be of legal drinking age.</p>
+            </div>
         </div>
-        <div class="date">
-            <p class="date-title">YEAR (YYYY)</p>
-            <input class="date-input" id="yearinput" type="number">
-            <div class="date-border"></div>
-            <div class="date-background"></div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4">
+                <p class="question">WHEN WERE YOU BORN?</p>
+            </div>
         </div>
-    </div>
-    <button class="to-homepage" onclick="switchToHome()">I AM OF LEGAL DRINKING AGE</button>
-    <div class="alert" id="alertbox">
-        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-        You must be at least 18 years old to access this website/enter a valid date.
-      </div>
-    <div class="verif-sites">
-        <a href="#" target="_blank"><img src="Img/FacebookFoot.png"></a>
-        <a href="#" target="_blank"><img src="Img/InstagramFoot.png"></a>
-        <a href="#" target="_blank"><img src="Img/TwitterFoot.png"></a>
-    </div>
-    <div class="cookies-container" id="cookiecont">
-        <div class="cookies-border">
-            <p class="cookies-text">We use cookies on our website to give you the most relevant experience. By clicking “Accept”, you consent to the use of ALL cookies. Alternatively, you may click “Cookie Settings” to provide a controlled consent.</p>
-            <button class="accept-cookies" onclick="hidecookies()">ACCEPT</button>
-            <button class="cookie-settings" onclick="hidecookies()">COOKIE SETTINGS</button>
+        <div class="row justify-content-center">
+            <div class="col-lg-1">
+                <p class="age-verif-underline"></p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="date-container">
+                <div class="col-xl-3">
+                    <div class="date">
+                        <p class="date-title">DAY (DD)</p>
+                        <input class="date-input"id="dayinput" type="number">
+                        <div class="date-border"></div>
+                        <div class="date-background"></div>
+                    </div>
+                </div>
+                <div class="col-xl-3">
+                    <div class="date">
+                        <p class="date-title">MONTH (MM)</p>
+                        <input class="date-input" id="monthinput" type="number">
+                        <div class="date-border"></div>
+                        <div class="date-background"></div>
+                    </div>
+                </div>
+                <div class="col-xl-3">
+                    <div class="date">
+                        <p class="date-title">YEAR (YYYY)</p>
+                        <input class="date-input" id="yearinput" type="number">
+                        <div class="date-border"></div>
+                        <div class="date-background"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4">
+                <div class="red-button">
+                    <button class="to-homepage" onclick="switchToHome()">I AM OF LEGAL DRINKING AGE</button>
+                </div>
+            </div>
+        </div>
+        <div class="alert" id="alertbox">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            You must be at least 18 years old to access this website/enter a valid date.
+        </div>
+        <div class="row justify-content-center">
+            <div class="verif-sites-container">
+                <div class="col-lg-1 d-flex justify-content-center">
+                    <a class="verif-site" href="#" target="_blank"><img src="Img/FacebookFoot.png"></a>
+                </div>
+                <div class="col-lg-1 d-flex justify-content-center">
+                    <a class="verif-site" href="#" target="_blank"><img src="Img/InstagramFoot.png"></a>
+                </div>
+                <div class="col-lg-1 d-flex justify-content-center">
+                    <a class="verif-site" href="#" target="_blank"><img src="Img/TwitterFoot.png"></a>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="cookies-container" id="cookiecont">
+                    <div class="cookies-border">
+                        <div class="col-lg-8">
+                            <p class="cookies-text">We use cookies on our website to give you the most relevant experience. By clicking “Accept”, you consent to the use of ALL cookies. Alternatively, you may click “Cookie Settings” to provide a controlled consent.</p>
+                        </div>
+                        <div class="col-lg-2">
+                            <button class="accept-cookies" onclick="hidecookies()">ACCEPT</button>
+                        </div>
+                        <div class="col-lg-2">
+                            <button class="cookie-settings" onclick="hidecookies()">COOKIE SETTINGS</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>

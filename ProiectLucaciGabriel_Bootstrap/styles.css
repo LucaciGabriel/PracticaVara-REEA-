@@ -77,6 +77,11 @@ body.ageverif {
     width: 100%;
     background-color:#0D0D0D;
 }
+img.age-verif-logo {
+    display: block;
+    margin: 100px auto 0;
+    scale: 1.2;
+}
 p.welcome {
     display: block;
     margin: 50px auto;
@@ -87,10 +92,16 @@ p.welcome {
 }
 p.question {
     margin: 0 auto;
-    width: 50%px;
     font: normal normal normal 32px/43px FuturaBook;
     color: white;
     text-align: center;
+}
+p.age-verif-underline {
+    display: block;
+    margin: 0 auto;
+    width: 32px;
+    height: 2px;
+    background-color: #54B3A1;
 }
 input.date-input {
     position: absolute;
@@ -114,6 +125,7 @@ div.date {
     position: relative;
     display: inline-block;
     margin: 1%;
+    padding: 2%;
     width: 186px;
     height: 94px;
 }
@@ -144,8 +156,7 @@ div.date-background {
 }
 button.to-homepage {
     position: relative;
-    margin: 30px auto;
-    height: 5%;
+    margin: 0 auto;
     text-align: center;
     font: normal normal normal 15px/20px FuturaDemi;
     letter-spacing: 1.5px;
@@ -171,15 +182,19 @@ span.closebtn {
     float: right;
     cursor: pointer;
 }
-div.verif-sites {
-    display: block;
+div.verif-sites-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     margin: 50px auto 10px;
-    height: 34px;
-    width: 120px;
+}
+a.verif-site{
+    display: inline-block;
+    padding: 2%;
 }
 div.cookies-container {
-    display: block;
-    width: 60%;
+    padding: 1%;
     margin: 0 auto;
     background-color: black;
 }
@@ -187,9 +202,6 @@ div.cookies-border {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    margin: 1%;
-    padding: 1%;
-    width: fit-content;
     border: 2px solid white;
 }
 p.cookies-text {
@@ -198,7 +210,6 @@ p.cookies-text {
     font: normal normal normal 15px/20px FuturaBook;
     color: white;
     letter-spacing: 0px;
-    width: 67%;
 }
 button.accept-cookies {
     margin: 0 2%;
@@ -335,7 +346,6 @@ img.slide-bg-image {
     padding: 350px 0;
 }
 div.message-container {
-    margin-left: -40px;
     background-image: linear-gradient(90deg, #000000CC 0%, #00000000 100%);
     min-height: 330px;
 }
